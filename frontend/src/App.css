@@ -1,0 +1,60 @@
+.App {
+  text-align: center;
+}
+
+.sidebar {
+  background-color: #f8f9fa;
+  height: calc(100vh - 56px);
+  padding-top: 20px;
+  position: fixed;
+  width: 16.67%;
+}
+
+.content {
+  margin-left: 16.67%;
+  padding: 20px;
+  width: 83.33%;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    height: auto;
+    position: relative;
+    width: 100%;
+  }
+  
+  .content {
+    margin-left: 0;
+    width: 100%;
+  }
+}
+
+.card {
+  margin-bottom: 20px;
+}
+
+.chatbot-container {
+  background-color: #fff;
+  border: 1px solid #dee2e6;
+  border-radius: 0.25rem;
+  height: 400px;
+  margin-bottom: 20px;
+  padding: 15px;
+  overflow-y: auto;
+}
+
+.chatbot-message {
+  margin-bottom: 10px;
+}
+
+.chatbot-message.user {
+  text-align: right;
+}
+
+.chatbot-message.bot {
+  text-align: left;
+}
+
+.form-container {
+  margin-bottom: 20px;
+}
