@@ -1,0 +1,97 @@
+// MongoDB Playground Script for My Homemaker Backend
+// This script initializes the database and collections for the application
+
+// Connect to the database (assuming local MongoDB instance)
+const dbName = "myhomemaker";
+const conn = new Mongo();
+const db = conn.getDB(dbName);
+
+// Create collections for each model if they don't exist
+// 1. Expenses Collection
+if (!db.getCollectionNames().includes("expenses")) {
+  db.createCollection("expenses");
+  print("Created 'expenses' collection");
+} else {
+  print("'expenses' collection already exists");
+}
+
+// 2. Incomes Collection
+if (!db.getCollectionNames().includes("incomes")) {
+  db.createCollection("incomes");
+  print("Created 'incomes' collection");
+} else {
+  print("'incomes' collection already exists");
+}
+
+// 3. Groceries Collection
+if (!db.getCollectionNames().includes("groceries")) {
+  db.createCollection("groceries");
+  print("Created 'groceries' collection");
+} else {
+  print("'groceries' collection already exists");
+}
+
+// 4. Protein Logs Collection
+if (!db.getCollectionNames().includes("proteinlogs")) {
+  db.createCollection("proteinlogs");
+  print("Created 'proteinlogs' collection");
+} else {
+  print("'proteinlogs' collection already exists");
+}
+
+// 5. Water Logs Collection
+if (!db.getCollectionNames().includes("waterlogs")) {
+  db.createCollection("waterlogs");
+  print("Created 'waterlogs' collection");
+} else {
+  print("'waterlogs' collection already exists");
+}
+
+// Optional: Insert sample data for testing purposes
+// Uncomment the following sections if you want to insert sample data
+
+
+db.expenses.insertOne({
+  description: "Sample Expense",
+  amount: 50.00,
+  date: new Date("2025-06-27"),
+  createdAt: new Date(),
+  updatedAt: new Date()
+});
+print("Inserted sample data into 'expenses'");
+
+db.incomes.insertOne({
+  source: "Sample Income",
+  amount: 5000.00,
+  date: new Date("2025-06-27"),
+  createdAt: new Date(),
+  updatedAt: new Date()
+});
+print("Inserted sample data into 'incomes'");
+
+db.groceries.insertOne({
+  name: "Sample Grocery Item",
+  quantity: "1 kg",
+  inInventory: true,
+  createdAt: new Date(),
+  updatedAt: new Date()
+});
+print("Inserted sample data into 'groceries'");
+
+db.proteinlogs.insertOne({
+  amount: 30,
+  date: new Date("2025-06-27"),
+  createdAt: new Date(),
+  updatedAt: new Date()
+});
+print("Inserted sample data into 'proteinlogs'");
+
+db.waterlogs.insertOne({
+  amount: 2.5,
+  date: new Date("2025-06-27"),
+  createdAt: new Date(),
+  updatedAt: new Date()
+});
+print("Inserted sample data into 'waterlogs'");
+
+print("MongoDB setup for My Homemaker completed. Collections are ready for use.");
